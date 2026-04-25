@@ -1,18 +1,33 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Text, Image } from "react-native";
 
-import { Logo } from '../../components/Logo/Logo';
+import { Logo } from "../../components/Logo/Logo";
 
-import { styles } from './HomeStyles';
+import { styles } from "./HomeStyles";
+import { ProfileImage } from "../../components/ProfileImage/ProfileImage";
+import { Footer } from "../../components/Footer/Footer";
+import { ContactButton } from "../../components/ContactButton/ContactButton";
 
-export function Home(){
-    return(
-        <View style={styles.container}>
+export function Home() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Logo />
+        <ProfileImage />
+      </View>
 
-            <View style={styles.logoContainer}>
-                <Logo/>
-            </View>
+      <View style={styles.buttonsContainer}>
+        <ContactButton />
+      </View>
 
-        </View>
-    )
+      <Text style={styles.social}>Acesse minhas redes:</Text>
+      <View style={styles.socialIcons}>
+        {}
+      </View>
+
+      <View style={styles.footerContainer}>
+        <Footer />
+      </View>
+    </View>
+  );
 }

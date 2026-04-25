@@ -8,8 +8,7 @@ import { ContactButton } from "./src/components/ContactButton/ContactButton";
 export default function App() {
   return (
     <View>
-    <Home/>
-       <ContactButton />
+      <Home/>
     </View>
   );
 }
