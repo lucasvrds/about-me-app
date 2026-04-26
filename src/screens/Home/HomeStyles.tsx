@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   buttonsContainer: {
     textAlign: "center",
     marginTop: 20,
-    width: 250,
+    width: 300,
   },
   social: {
     fontSize: 18,
@@ -59,5 +59,14 @@ export const styles = StyleSheet.create({
   footerContainer: {
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+   switchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  switchText: {
+    marginRight: 10,
+    fontSize: 18,
   },
 });

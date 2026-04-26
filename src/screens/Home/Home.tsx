@@ -1,5 +1,8 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
 
 import { Logo } from "../../components/Logo/Logo";
 
@@ -9,8 +12,24 @@ import { Footer } from "../../components/Footer/Footer";
 import { ContactButton } from "../../components/ContactButton/ContactButton";
 import { AboutMeButton } from "../../components/AboutMeButton/AboutMeButton";
 
+type RootStackParamList = {
+  Home: undefined;
+  AboutMe: undefined;
+};
+
 export function Home() {
+
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();  
+  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+
+  const toggleSwitch = () => {
+    setIsEnabled(previousState => !previousState);
+    Alert.alert('Switch pressionado');
+  };
+
+
   return (
+    
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.headerContainer}>
         <Logo />
@@ -28,12 +47,24 @@ export function Home() {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <AboutMeButton />
+        <AboutMeButton onPress={() => navigation.navigate(    'AboutMe')} />
         <ContactButton />
       </View>
 
+      <Text></Text>
       <Text style={styles.social}>Acesse minhas redes:</Text>
 
+      <View style={styles.switchContainer}>
+        <Text style={styles.switchText}>Alterar visualização</Text>
+        <Switch
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
+          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
+      </View>
+      
       <View style={styles.socialIcons}>
         <TouchableOpacity style={styles.socialItem}>
           <Image
@@ -50,8 +81,26 @@ export function Home() {
           />
           <Text style={styles.socialText}>LinkedIn</Text>
         </TouchableOpacity>
-      </View>
 
+        <TouchableOpacity style={styles.socialItem}>
+          <Image
+            source={require("../../assets/instagram.png")}
+            style={styles.icon}
+          />
+          <Text style={styles.socialText}>Instagram</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.socialItem}>
+          <Image
+            source={require("../../assets/twitch.png")}
+            style={styles.icon}
+          />
+          <Text style={styles.socialText}>Twitch</Text>
+        </TouchableOpacity>
+      </View>
+     
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
       <View style={styles.footerContainer}>
         <Footer />
       </View>

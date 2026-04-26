@@ -7,8 +7,13 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
-    headerContainer: {
-    },
-    footerContainer: {
-    },
+    title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginVertical: 10,
+  },
+  content: {
+    fontSize: 18,
+    marginVertical: 10,
+  },
 })

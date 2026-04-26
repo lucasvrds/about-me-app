@@ -2,9 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
+    backgroundColor: "red",
+    padding: 20,
+
   },
   text: {
-    fontSize: 12,
+    textAlign: "center",
+    fontSize: 15  ,
     color: '#888',
   }
 
