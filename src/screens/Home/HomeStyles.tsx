@@ -10,15 +10,16 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
+    textAlign: "left",
     width: 300,
     fontSize: 24,
     fontWeight: "bold",
     marginVertical: 10,
   },
   intro: {
+    textAlign: "left",
     width: 300,
-    fontSize: 18,
-    marginVertical: 10,
+    fontSize: 16,
   },
   buttonsContainer: {
     textAlign: "center",
@@ -26,12 +27,18 @@ export const styles = StyleSheet.create({
     width: 300,
   },
   social: {
-    fontSize: 18,
-    marginVertical: 10,
+    fontSize: 22,
     fontWeight: "bold",
   },
+   switchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  switchText: {
+    fontSize: 18,
+    marginRight: 40,
+  },
   socialIcons: {
-    marginTop: 10,
     alignItems: 'center',
     width: '100%', 
   },
@@ -43,7 +50,7 @@ export const styles = StyleSheet.create({
     borderColor: "#004b29",
     borderRadius: 8,
     padding: 10,
-    marginVertical: 5,
+    marginVertical: 4,
     width: 250,
   },
   icon: {
@@ -53,20 +60,11 @@ export const styles = StyleSheet.create({
   socialText: {
     color: "#004b29",
     fontSize: 16,
-    marginLeft: 10, 
-    fontWeight: '500',
+    marginLeft: 12, 
+    fontWeight: '400',
   },
   footerContainer: {
     justifyContent: "flex-end",
     alignItems: "center",
-  },
-   switchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  switchText: {
-    marginRight: 10,
-    fontSize: 18,
   },
 });

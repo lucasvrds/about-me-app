@@ -52,13 +52,13 @@ export function Home() {
       </View>
 
       <Text></Text>
-      <Text style={styles.social}>Acesse minhas redes:</Text>
+      <Text style={styles.social}>Veja minhas redes:</Text>
 
       <View style={styles.switchContainer}>
         <Text style={styles.switchText}>Alterar visualização</Text>
         <Switch
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#888" }}
+          thumbColor={isEnabled ? "#004b29" : "#444"}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleSwitch}
           value={isEnabled}
