@@ -71,7 +71,7 @@ export function Home() {
       </View>
       
       <View style={styles.socialIcons}>
-        <TouchableOpacity style={styles.socialItem} onPress={() => openLink('https://github.com/VitorSolerAguilar')}>
+        <TouchableOpacity style={styles.socialItem} onPress={() => openLink('https://github.com/lucasvrds/about-me-app')}>
           <Image
             source={require("../../assets/github.png")}
             style={styles.icon}
