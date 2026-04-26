@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useTheme } from "../../context/ThemeContext";
 
 
 import { Logo } from "../../components/Logo/Logo";
@@ -21,6 +22,7 @@ export function Home() {
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();  
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
+  const { isDark, toggleTheme } = useTheme();
 
   const toggleSwitch = () => {
     setIsEnabled(previousState => !previousState);
@@ -32,24 +34,19 @@ export function Home() {
   });
 };
 
+  const backgroundColor = isDark ? "#121212" : "#2b2b2b";
+  const textColor = isDark ? "#ffffff" : "#cccccc";
 
   return (
     
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.headerContainer}>
+    <ScrollView contentContainerStyle={[styles.container, { backgroundColor }]}>
+       <View style={styles.headerContainer}>
         <Logo />
         <ProfileImage />
       </View>
 
-      <Text style={styles.title}>
-        Eleve seu negócio digital a outro nível com um Front-end de qualidade!
-      </Text>
-
-      <Text style={styles.intro}>
-        Olá! Somos a Code Center, desenvolvedores Front-end com especialização
-        em React, HTML e CSS. Ajudamos pequenos negócios e designers a colocarem
-        em prática boas ideias. Vamos conversar?
-      </Text>
+      <Text style={[styles.title, { color: textColor }]}>Eleve seu negócio digital a outro nível com um Front-end de qualidade!</Text>
+      <Text style={[styles.intro, { color: textColor }]}>Olá! Somos a Code Center, desenvolvedores Front-end com especialização em React, HTML e CSS. Ajudamos pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</Text>
 
       <View style={styles.buttonsContainer}>
         <AboutMeButton onPress={() => navigation.navigate(    'AboutMe')} />
@@ -57,16 +54,16 @@ export function Home() {
       </View>
 
       <Text></Text>
-      <Text style={styles.social}>Acesse minhas redes:</Text>
+      <Text style={[styles.social, { color: textColor }]}>Acesse minhas redes:</Text>
 
       <View style={styles.switchContainer}>
-        <Text style={styles.switchText}>Alterar visualização</Text>
+        <Text style={[styles.switchText, { color: textColor }]}>Alterar visualização</Text>
         <Switch
           trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          thumbColor={isDark  ? "#f5dd4b" : "#f4f3f4"}
           ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
+          onValueChange={toggleTheme}
+          value={isDark}
         />
       </View>
       
