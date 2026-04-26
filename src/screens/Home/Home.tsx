@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -26,6 +26,11 @@ export function Home() {
     setIsEnabled(previousState => !previousState);
     Alert.alert('Switch pressionado');
   };
+  const openLink = (url: string) => {
+  Linking.openURL(url).catch(() => {
+    Alert.alert('Erro', 'Não foi possível abrir o link');
+  });
+};
 
 
   return (
@@ -66,7 +71,7 @@ export function Home() {
       </View>
       
       <View style={styles.socialIcons}>
-        <TouchableOpacity style={styles.socialItem}>
+        <TouchableOpacity style={styles.socialItem} onPress={() => openLink('https://github.com/VitorSolerAguilar')}>
           <Image
             source={require("../../assets/github.png")}
             style={styles.icon}
@@ -74,7 +79,7 @@ export function Home() {
           <Text style={styles.socialText}>GitHub</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.socialItem}>
+        <TouchableOpacity style={styles.socialItem} onPress={() => openLink('https://www.linkedin.com/in/lucas-vrds/')}>
           <Image
             source={require("../../assets/linkedin.png")}
             style={styles.icon}
@@ -82,7 +87,7 @@ export function Home() {
           <Text style={styles.socialText}>LinkedIn</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.socialItem}>
+        <TouchableOpacity style={styles.socialItem} onPress={() => openLink('https://www.instagram.com/fatecitu/')}>
           <Image
             source={require("../../assets/instagram.png")}
             style={styles.icon}
