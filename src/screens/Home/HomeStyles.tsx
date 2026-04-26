@@ -61,14 +61,9 @@ export const styles = StyleSheet.create({
   socialText: {
     color: "#004b29",
     fontSize: 16,
-<<<<<<< HEAD
-    marginLeft: 12, 
-    fontWeight: '400',
-=======
     marginLeft: 10, 
     fontWeight: '500',
     flex: 1,
->>>>>>> 018895b3f855c1f1bb0faa31767abc22ebf0f350
   },
   footerContainer: {
     justifyContent: "flex-end",
