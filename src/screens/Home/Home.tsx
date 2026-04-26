@@ -59,8 +59,8 @@ export function Home() {
       <View style={styles.switchContainer}>
         <Text style={[styles.switchText, { color: textColor }]}>Alterar visualização</Text>
         <Switch
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={isDark  ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#888" }}
+          thumbColor={isDark  ? "#004b29" : "#f4f3f4"}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleTheme}
           value={isDark}

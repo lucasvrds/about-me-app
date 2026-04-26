@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
+  container: {
     backgroundColor: "#2b2b2b",
     alignItems: "center",
-    color: "#ffffff",
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
   },
   headerContainer: {
     alignItems: "center",
   },
-    title: {
+  title: {
+    color: "#cccccc",
     textAlign: "left",
     width: 300,
     fontSize: 24,
@@ -18,9 +18,10 @@ export const styles = StyleSheet.create({
     marginVertical: 14,
   },
   intro: {
+    color: "#cccccc",
     textAlign: "left",
     width: 300,
     fontSize: 16,
-    marginBottom: 20
+    marginBottom: 32,
   },
-})
+});
