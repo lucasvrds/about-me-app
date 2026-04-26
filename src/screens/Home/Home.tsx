@@ -62,7 +62,10 @@ export function Home() {
           trackColor={{ false: "#767577", true: "#888" }}
           thumbColor={isDark  ? "#004b29" : "#f4f3f4"}
           ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleTheme}
+          onValueChange={() => {
+            toggleTheme();
+            Alert.alert('Switch pressionado');
+          }}
           value={isDark}
         />
       </View>
