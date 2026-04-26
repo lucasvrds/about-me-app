@@ -49,12 +49,14 @@ export const styles = StyleSheet.create({
   icon: {
     width: 32,
     height: 32,
+    marginRight: 10,
   },
   socialText: {
     color: "#004b29",
     fontSize: 16,
     marginLeft: 10, 
     fontWeight: '500',
+    flex: 1,
   },
   footerContainer: {
     justifyContent: "flex-end",
